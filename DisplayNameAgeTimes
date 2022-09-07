@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Samplearray
 {
-    public class Nameandage
+    public class DisplayNameAgeTimes
     {
         public static void Main()
         {
