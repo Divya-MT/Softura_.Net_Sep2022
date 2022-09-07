@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Samplearray
+{
+    public class Array
+    {
+        public static void Main()
+        {
+            int m1,m2,m3,m4,m5, total,stdTotal;
+            double per;
+             
+
+            Console.WriteLine("Enter tamilmark");
+             m1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter englishmark");
+            m2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter mathsmark");
+            m3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter sciencemark");
+            m4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter socialmark");
+            m5 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Standard Total Mark");
+            stdTotal = Convert.ToInt32(Console.ReadLine());
+            total = m1 + m2 + m3 + m4 + m5;
+            per = (total * 100) / stdTotal ;
+            Console.WriteLine("your Total Marks is {0}, and Percentage is {1}",total,per);
+            
+        }
+    }
+}
