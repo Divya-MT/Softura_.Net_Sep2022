@@ -4,36 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Samplearray
+namespace Samplearrays
 {
-    public class Array
+    public class CalculatePercentage
     {
-        public static async void Main()
+        public static void Main()
         {
-            int n, total=0, stdTotal;
-            int[] marks=new int[50];
+            int total = 0;
+            int[] marks = new int[5];
             double per;
-             
-
-            Console.WriteLine("Enter number of subjects");
-             n = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Standard total marks");
-            stdTotal = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter Marks of each subject");
-            for(int i=0;i<n;i++)
+            for (int i = 0; i < 5; i++)
             {
                 marks[i] = Convert.ToInt32(Console.ReadLine());
             }
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < 5; i++)
             {
                 total = total + marks[i];
             }
 
-            per = (total * 100) / stdTotal ;
-            Console.WriteLine("your Total Marks is {0}, and Percentage is {1}",total,per);
-            
+            per = (total * 100) / 500;
+            Console.WriteLine("your Total Marks is {0}, and Percentage is {1}", total, per);
         }
     }
 }
