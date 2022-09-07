@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Formats.Asn1;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Samplearray
+{
+    public class unit
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Enter you electricity unit");
+            int unit = Convert.ToInt32(Console.ReadLine());
+            int totalAmount = 0;
+
+            if(unit>500)
+            {
+                int calUnit = unit - 500;
+                totalAmount = totalAmount + (calUnit * 7);
+                unit=unit - calUnit;
+            }
+
+            if (unit > 350 && unit <= 500)
+            {
+                int calUnit = unit - 350;
+                totalAmount = totalAmount + (calUnit * 5);
+                unit = unit - calUnit;
+
+            }
+             if (unit > 200 && unit <= 350)
+            {
+                int calUnit = unit - 200;
+                totalAmount = totalAmount + (calUnit * 3);
+                unit = unit - calUnit;
+            }
+             if (unit > 0 && unit <= 200)
+            {
+                totalAmount = totalAmount + (unit * 2);
+            }
+
+            Console.WriteLine("your electricity bill is " + totalAmount);
+
+        }
+    }
+}
