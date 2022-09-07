@@ -8,25 +8,29 @@ namespace Samplearray
 {
     public class Array
     {
-        public static void Main()
+        public static async void Main()
         {
-            int m1,m2,m3,m4,m5, total,stdTotal;
+            int n, total=0, stdTotal;
+            int[] marks=new int[50];
             double per;
              
 
-            Console.WriteLine("Enter tamilmark");
-             m1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter englishmark");
-            m2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter mathsmark");
-            m3 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter sciencemark");
-            m4 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter socialmark");
-            m5 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Standard Total Mark");
+            Console.WriteLine("Enter number of subjects");
+             n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Standard total marks");
             stdTotal = Convert.ToInt32(Console.ReadLine());
-            total = m1 + m2 + m3 + m4 + m5;
+
+            Console.WriteLine("Enter Marks of each subject");
+            for(int i=0;i<n;i++)
+            {
+                marks[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                total = total + marks[i];
+            }
+
             per = (total * 100) / stdTotal ;
             Console.WriteLine("your Total Marks is {0}, and Percentage is {1}",total,per);
             
