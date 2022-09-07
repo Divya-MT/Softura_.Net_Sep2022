@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Samplearray
+{
+    public class Travelhistory
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Do you have Travel History?");
+            string? hasHistory = Console.ReadLine();
+            if (hasHistory == "Yes")
+            {
+                Console.WriteLine("Do you have temperature?");
+                string? hasTemperature = Console.ReadLine();
+                if (hasTemperature?.ToLower() == "yes")
+                {
+                    Console.WriteLine("Do you have cough or sneez");
+                    string? hasCoughSeenz = Console.ReadLine();
+                    if (hasCoughSeenz?.ToLower() == "yes")
+                    {
+                        Console.WriteLine("Swab test");
+                    }
+                    else if (hasCoughSeenz?.ToLower() == "no")
+                    {
+                        Console.WriteLine("Quarantine Fever Medicine");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter a valid response (Only Yes or No)");
+                    }
+                }
+                else if (hasTemperature?.ToLower() == "no")
+                {
+                    Console.WriteLine("Home Quarantain for 28 days");
+                }
+                else
+                {
+                    Console.WriteLine("Enter a valid response (Only Yes or No)");
+                }
+            }
+            else if (hasHistory?.ToLower() == "no")
+            {
+                Console.WriteLine("Safe Not Covid");
+            }
+            else
+            {
+                Console.WriteLine("Enter a valid response (Only Yes or No)");
+            }
+        }
+    }
+}
