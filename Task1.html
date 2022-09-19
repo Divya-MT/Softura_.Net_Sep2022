@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .header {
+            background-color:cornflowerblue;
+            text-align:center;
+            font-size:80;
+            color:white;
+            height:100px;
+            width:100%;
+           
+        }
+        .menu{
+            background-color:dodgerblue;
+            height:400px;
+            color:white;
+            text-align:center;
+            width:320px;
+           
+        }
+        .empty {
+            height: 400px;
+            width: 1000px;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            /*padding:10px 10px 10px 20px;*/
+            padding: 10px 0px 10px 0px;
+        }
+        .footer{
+            background-color:black;
+            text-align:center;
+           color:white;
+           height:30px;
+        }
+        .row {
+            display: flex;
+            display: -webkit-flex;
+        }
+
+        .column {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            padding: 10px 10px 10px 0px;
+            height: 400px;
+            width:150px;
+        }
+        .empty_menu {
+            background-color: skyblue;
+            height: 400px;
+            width: 1000px;
+            color: white;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div>
+        <div class="header"> Title</div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="menu">
+                <div>Menu</div>
+                <div>Menu</div>
+                <div>Menu</div>
+                <div>Menu</div>
+            </div>
+        </div>
+        <div class="empty">
+            <div class="empty_menu">
+                column
+            </div>
+        </div>
+    </div>
+
+
+        <!--<div>
+            <div class="menu">
+                <div>Menu</div>
+                <div>Menu</div>
+                <div>Menu</div>
+                <div>Menu</div>
+            </div>
+            <div>
+                <div class=" empty"></div>
+            </div>
+        </div>-->
+        <div class="footer">
+            copywrite
+        </div>
+
+</body>
+</html>
