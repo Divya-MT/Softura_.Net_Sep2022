@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body style="background-color:cornflowerblue" onsubmit="myRegisterformvalidation">
+
+    <form action="WelcomePage.html"name="Registrationform" id="Registrationform">
+        <h1>Registration Form</h1>
+        <label>User Name:</label>
+        <input type="text" id="username" placeholder="Enter Name" /><br><br>
+        <label>Email ID:</label>
+        <input type="text" id="emailId" placeholder="EmailID" /><br><br>
+        <label>Password: </label>
+        <input type="password" id="password" placeholder="Enter Password" /><br><br>
+        <label>Confoirm Password: </label>
+        <input type="password" id="confirmpassword" placeholder="ReEnter Password" /><br><br>
+        <input type="button" value="Submit" onclick="Registerformvalidation()" /><br /><br />
+    </form>
+    
+    <script>
+        function Registerformvalidation() {
+            let Username = document.getElementById("username").value;
+            let emailID = document.getElementById("emailId").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmpassword").value;
+            if (Username == "") {
+                alert("Enter User Name");
+            }
+            else if (emailID == "") {
+                alert("Enter Email ID");
+            }
+            else if (password == "") {
+                alert("Enter Passwor");
+            }
+            else if (confirmPassword == "") {
+                alert("Enter Confirmpassword is mandatory");
+            }
+            else if (confirmPassword != password) {
+                alert("It is not match with Password");
+            }
+            else  {
+                document.getElementById("Registrationform").submit();
+            }
+        }
+    </script>
+</body>
+</html>
