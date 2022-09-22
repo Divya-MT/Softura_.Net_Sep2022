@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body style="background-color:aqua" onsubmit="myvalidationform">
+    
+    <form name="Loginform" id="Loginform">
+        <h1>Login Page</h1>
+        <label>User Name:</label>
+        <input type="text" id="username" placeholder="Enter Name" /><br><br>
+        <label>Password: </label>
+        <input type="password" id="password" placeholder="Enter Password" /><br><br>
+        <input type="button" value="Submit" onclick="validationform()" /><br /><br />
+        <a href="Registrationform.html">Registration</a>
+        <input type="number" value="1" id="attempt" hidden />
+    </form>
+
+</body>
+</html>
+<script>
+    var attemptcount = 1;
+    function validationform() {
+        let userName = "Divya";
+        let password = "Divya@123";
+        let Username = document.getElementById("username").value;
+        let Password = document.getElementById("password").value;
+        if (parseInt(document.getElementById("attempt").value) > 3) {
+            alert("You have tried 3 times already. You account has been locked");
+        }
+        else {
+        if (Username != userName) {
+            attemptcount = attemptcount + 1;
+            document.getElementById("attempt").value = attemptcount;
+            alert("Incorrect User Name");
+            
+        }
+        else if (Password != password && Password.length < 6) {
+            attemptcount = attemptcount + 1;
+            document.getElementById("attempt").value = attemptcount;
+            alert("Invalid Password");
+        }
+        else {
+                document.getElementById("Loginform").submit();
+            }
+        }
+
+    }
+</script>
