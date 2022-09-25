@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FifthDayAssesment
+{
+    public class Restaurant
+    {
+        public static void Main()
+        {
+            List<string> orders = new List<string>();
+            orders.Add("Chicken Briyani");
+            orders.Add("Mutton Briyani");
+            orders.Add("Fish Fry");
+            orders.Add("Chicken 65");
+            orders.Add("Mushroom Fried Rice");
+
+            FileStream fs = new FileStream("C:\\Users\\YKG\\Restaurant.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.BaseStream.Seek(0, SeekOrigin.End);
+
+            foreach (string i in orders)
+                sw.WriteLine(i);
+
+            sw.Flush();
+            fs.Close();
+
+            FileStream fstream = new FileStream("C:\\Users\\YKG\\Restaurant.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamReader sr = new StreamReader(fstream);
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            Console.WriteLine(sr.ReadToEnd());
+            sr.Close();
+            fstream.Close();
+
+            FileInfo finfo = new FileInfo("C:\\Users\\YKG\\Restaurant.txt");
+            Console.WriteLine("File was created on : " + finfo.CreationTime);
+            Console.WriteLine("Length of the file is : " + finfo.Length);
+        }
+    }
+}
