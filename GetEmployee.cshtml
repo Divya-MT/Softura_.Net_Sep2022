@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<EmployeeApp.Models.Employee>
+@{
+}
+<h1>Employee Details</h1>
+<style>
+    .table,thead,td{
+        border:solid 1px;
+    }
+    .thead{
+        fornt-family:arial;
+        fornt-size:20px;
+        background-color:green;
+        text-color:white;
+    }
+    .body{
+        background-color:violet;
+    }
+</style>
+<body class="body">
+    <a class="btn-info" href="\employee\addemploye">Add New Employee</a>
+<table class="table">
+    <thead class="thead">
+        <tr>
+            <td>@Html.DisplayNameFor(model=>model.EmployeeId)</td>
+            <td>@Html.DisplayNameFor(model=>model.FirstName)</td>
+            <td>@Html.DisplayNameFor(model=>model.LastName)</td>
+            <td>@Html.DisplayNameFor(model=>model.Gender)</td>
+                
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var E in Model){
+       <tr>
+           <td>@E.EmployeeId</td>
+           <td>@E.FirstName</td>
+           <td>@E.LastName</td>
+           <td>@E.Gender</td>
+                    
+       </tr>
+            }
+    </tbody>
+
+
+</table>
+</body>
